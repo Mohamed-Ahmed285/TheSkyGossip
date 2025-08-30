@@ -84,7 +84,12 @@ body.bg-drizzle { --bg-start:#232526; --bg-end:#414345; }
 .card .city { font-size: 1.1rem; font-weight: 700; }
 .card .temp { font-size: 2rem; margin: 6px 0; }
 .card .desc { text-transform: capitalize; color: var(--muted); }
-.card .meta { display: grid; grid-template-columns: repeat(3,1fr); gap: .6rem; margin-top: .75rem; font-size: .95rem; }
+.card .meta { display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .6rem;
+    margin-top: .75rem;
+    margin-bottom: 0.75rem;
+    font-size: .95rem; }
 .card .meta div { background: rgba(255,255,255,0.08); padding: .5rem .6rem; border-radius: 12px; }
 
 .weather-icon { width: 72px; height: 72px; display:block; margin: 0 auto; }
