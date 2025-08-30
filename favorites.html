@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Favorites</title>
+        <link rel="icon" href="logo.png">
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="theme-auto">
+  <nav class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="search.html">Search</a>
+    <a href="favorites.html" class="active">Favorites</a>
+    <a href="trends.html">Trends</a>
+  </nav>
+
+  <header class="header">
+    <div class="header-left">
+      <h1>Favorites</h1>
+      <p class="subtitle">Your saved cities with quick comparisons</p>
+    </div>
+   <div class="header-right" style="
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;">
+      <div id="dateTime" class="clock"></div>
+      <button id="useLocationBtn" class="btn-primary">Use My Location</button>
+      <!-- <button id="toggleThemeBtn" class="btn-secondary">Toggle Theme</button> -->
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div id="favCities" class="grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">Compare Cities</h2>
+      <div class="compare-box">
+        <select id="city1"></select>
+        <select id="city2"></select>
+        <button class="btn-primary" id="compareBtn">Compare</button>
+      </div>
+      <div id="comparisonResult" class="comparison"></div>
+      <canvas id="compareChart"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer"></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  <script>
+      updateDateTime();
+    setThemeFromStorage();
+    attachThemeToggle();
+    loadFavorites();
+    bindCompare();
+  </script>
+</body>
+</html>

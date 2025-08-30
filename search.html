@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Weather</title>
+        <link rel="icon" href="logo.png">
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="theme-auto">
+  <nav class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="search.html" class="active">Search</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="trends.html">Trends</a>
+  </nav>
+
+  <header class="header">
+    <div class="header-left">
+      <h1>Search</h1>
+      <p class="subtitle">Find cities and see real-time conditions with a 3‑day forecast</p>
+    </div>
+   <div class="header-right" style="
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;">
+      <div id="dateTime" class="clock"></div>
+      <button id="useLocationBtn" class="btn-primary">Use My Location</button>
+      <!-- <button id="toggleThemeBtn" class="btn-secondary">Toggle Theme</button> -->
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="search-box">
+        <input id="cityInput" type="text" placeholder="Type a city (e.g., Cairo, Paris, Tokyo)" autocomplete="off"/>
+        <button class="btn-primary" id="searchBtn">Search</button>
+        <ul id="suggestions" class="suggestions"></ul>
+      </div>
+      <div id="searchResult" style="    margin: 23px 0px;
+"></div>
+      <div id="forecastResult" class="forecast-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">Recent Searches</h2>
+      <ul id="recentSearches" class="chips"></ul>
+    </section>
+  </main>
+
+  <footer class="footer"></footer>
+
+  <script src="script.js"></script>
+  <script>
+       updateDateTime();
+    setThemeFromStorage();
+    attachThemeToggle();
+    bindSearch();
+    renderRecentSearches();
+  </script>
+</body>
+</html>

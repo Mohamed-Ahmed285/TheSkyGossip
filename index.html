@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TheSkyGossip</title>
+      <link rel="icon" href="logo.png">
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="theme-auto">
+  <nav class="navbar">
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="search.html">Search</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="trends.html">Trends</a>
+  </nav>
+
+  <header class="header">
+    <!-- <div class="header-left">
+      <h1>TheSkyGossip</h1>
+      <p class="subtitle">What the clouds are saying.</p>
+    </div> -->
+    <div class="header-left" style="    margin-left: 50px;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+     <img src="logo.png" alt="TheSkyGossip" srcset="" style="width: 215px;    margin-left: 35px;">
+     <h1 style="color: cadetblue; font-size:xxx-large">TheSkyGossip</h1>
+      <p class="subtitle">What the clouds are saying.</p>
+    </div>
+
+    <div class="header-right" style="
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;">
+      <div id="dateTime" class="clock"></div>
+      <button id="useLocationBtn" class="btn-primary">Use My Location</button>
+      <!-- <button id="toggleThemeBtn" class="btn-secondary">Toggle Theme</button> -->
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel quick-links">
+      <h2 class="section-title">Quick Links</h2>
+      <div class="quick-grid">
+        <a class="quick-card" href="search.html">
+          <div class="quick-card-title">Search Cities</div>
+          <div class="quick-card-desc">Find any city and view details</div>
+        </a>
+        <a class="quick-card" href="favorites.html">
+          <div class="quick-card-title">Favorites</div>
+          <div class="quick-card-desc">Your saved locations</div>
+        </a>
+        <button class="quick-card" id="quickLocation">
+          <div class="quick-card-title">Current Location</div>
+          <div class="quick-card-desc">Auto-detect and show now</div>
+        </button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">Top Cities</h2>
+      <div id="topCities" class="grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">Highlights</h2>
+      <div id="highlightCards" class="grid highlights-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const topCities = ["Cairo","London","Paris","New York","Tokyo","Sydney"];
+    updateDateTime();
+    setThemeFromStorage();
+    attachThemeToggle();
+    attachLocationButtons();
+    loadTopCities(topCities);
+  </script>
+</body>
+</html>
